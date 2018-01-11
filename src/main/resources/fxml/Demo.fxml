@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.SegmentedButton?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.assupport.javaicondemo.DemoController">
+    <children>
+        <HBox spacing="5.0">
+            <children>
+                <SegmentedButton>
+                    <buttons>
+                        <ToggleButton onAction="#onBtnMapClick" selected="true" text="Map" />
+                        <ToggleButton onAction="#onBtnSearchClick" text="Search" />
+                    </buttons>
+                </SegmentedButton>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="IconSet:" />                  
+                    </children>
+                </HBox>
+                <ComboBox fx:id="cmbIconSet" prefWidth="150.0" />
+            <HBox alignment="CENTER_LEFT" spacing="2.0" visible="false">
+               <children>
+                  <Label text="Search:" />
+                  <TextField fx:id="txtSearch" />
+               </children>
+            </HBox>
+            </children>
+        </HBox>
+        <TableView fx:id="tableViewIcons" managed="false" prefHeight="700.0" visible="false">
+            <columns>
+                <TableColumn prefWidth="293.0" resizable="false" text="Icons" />
+            </columns>
+        </TableView>
+        <ScrollPane fx:id="scrollPane" pannable="true" prefHeight="700.0" prefWidth="840.0">
+            <content>
+                <TilePane fx:id="tilePane" hgap="4.0" vgap="4.0" />
+            </content>
+        </ScrollPane>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>
