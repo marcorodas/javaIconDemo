@@ -74,16 +74,20 @@ public abstract class BaseController {
     }
 
     /**
-     * Allow to access methods that manipulates FXML fields
+     * Allow to access methods that manipulates FXML fields.
+     * 
+     * <pre> //Convenient way to override method in subclass
+     * public class SampleController extends BaseController {
+     *    /.../
+     *    &#64;Override
+     *    public SampleController getController() throws IOException {
+     *      return (SampleController) super.getController();
+     *    }
+     *    /.../
+     * }</pre>
      * <pre>
-     * {@code
-     *      public class SampleController extends BaseController {
-     *          @Override
-     *          public SampleController getController() throws IOException {
-     *              return (SampleController) super.getController();
-     *          }
-     *      }
-     * }
+     * //Sample Use:
+     * controller.getController().setComboBox(2);
      * </pre>
      *
      * @return Controller with valid FXML fields

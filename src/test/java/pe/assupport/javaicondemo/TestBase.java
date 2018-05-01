@@ -41,7 +41,7 @@ public abstract class TestBase extends ApplicationTest {
 
     @Override
     public void start(Stage arg0) throws Exception {
-        BaseController.setAppTitle("Image Process");
+        BaseController.setAppTitle("Icon Demo");
         this.start();
     }
 
